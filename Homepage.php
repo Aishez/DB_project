@@ -31,15 +31,15 @@
             </div>
 
             <div class="col-md-6 button pt-5" id="show-button">
-                <a href="./StudenLogin.php">
+                <a href="student/StudenLogin.php">
                     <button type="button" class="btn btn-primary glow-on-hover" style="padding: 15px 105px;">Student</button>
                 </a>
                 <br>
-                <a href="./companylogin.php">
+                <a href="company/companylogin.php">
                     <button type="button" class="btn btn-secondary mt-4 glow-on-hover">Company</button>
                 </a>
                 <br>
-                <a href="./Allumslogin.php">
+                <a href="Allumns/Allumslogin.php">
                     <button type="button" class="btn btn-success mt-4 glow-on-hover" style="padding: 15px 110px;">Allums</button>
                 </a>
 
