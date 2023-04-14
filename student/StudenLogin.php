@@ -269,7 +269,7 @@
 
     <div class="container" style="display: none;" id="register">
         <header style="color: white;">Registration</header>
-        <form action="#">
+        <form  method="post" action="./register.php">
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Personal Details</span>
@@ -277,33 +277,35 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" name="name"  placeholder="Enter your name" required>
                         </div>
 
                         <div class="input-field">
                             <label>Roll Number</label>
-                            <input type="text" placeholder="Enter Roll no." required>
+                            <input type="text" name="roll"  placeholder="Enter Roll no." required>
                         </div>
 
                         <div class="input-field">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your email" required>
+                            <input type="text" name="email"  placeholder="Enter your email" required>
                         </div>
 
                         <div class="input-field">
                             <label>Mobile Number</label>
-                            <input type="number" placeholder="Enter mobile number" required>
+                            <input type="number" name="mobile"  placeholder="Enter mobile number" required>
                         </div>
 
                         <div class="input-field">
-                            <label>Package(LPA)</label>
-                            <input type="number" placeholder="Enter your package" required>
+                            <label>Age</label>
+                            <input type="number" name="age"  placeholder="Enter your age" required>
                         </div>
-
+                        
                         <div class="input-field">
                             <label>Batch of</label>
-                            <input type="number" placeholder="Passing year" required>
+                            <input type="number" name="batch"  placeholder="Passing year" required>
                         </div>
+                        
+
                     </div>
                 </div>
 
@@ -313,36 +315,43 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Class 10th</label>
-                            <input type="number" placeholder="Percentage" required>
+                            <input type="number" name="class10"  placeholder="Percentage" required>
                         </div>
 
                         <div class="input-field">
                             <label>Class 12th</label>
-                            <input type="number" placeholder="Percentage" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>SPI</label>
-                            <input type="number" placeholder="Latest SPI" required>
+                            <input type="number" class="12"  placeholder="Percentage" required>
                         </div>
 
                         <div class="input-field">
                             <label>CPI</label>
-                            <input type="number" placeholder="Current CPI" required>
+                            <input type="number" name="cpi"  placeholder="Current CPI" required>
                         </div>
 
                         <div class="input-field">
                             <label>Specialisation</label>
-                            <input type="text" placeholder="Enter your specialisation" required>
+                            <input type="text" name="specialisation"  placeholder="Enter your specialisation" required>
                         </div>
 
                         <div class="input-field">
                             <label>Area of intrest</label>
-                            <input type="text" placeholder="Enter area of interest" required>
+                            <input type="text" name="aoi"  placeholder="Enter area of interest" required>
                         </div>
+
+                        <div class="input-field">
+                            <label>Package(LPA)</label>
+                            <input type="number" name="lpa"  placeholder="Enter your package" required>
+                        </div>
+
+                        
+                        <div class="input-field">
+                            <label>Package(LPA)</label>
+                            <input type="number" name="lpa"  placeholder="Enter your package" required>
+                        </div>
+
                     </div>
 
-                    <button type="submit" class="nextBtn">
+                    <button type="submit" class="nextBtn" name="submit" value="submit">
                         <span class="btnText">Submit</span>
                     </button>
 
