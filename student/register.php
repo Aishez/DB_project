@@ -18,9 +18,9 @@ if (isset($_POST['submit']))
     $aoi = $_POST['aoi'];
     $package = $_POST['package'];
     $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
 
-    
-
+     
     if( $cpassword == $password && strlen($password) >= 8)
     {
         $chk = "";
@@ -28,12 +28,12 @@ if (isset($_POST['submit']))
         {
             $chk.=$chk1.",";
         }
-        $sql = "insert into form1(Fname,Lname,email,password) values('$Fname' ,'$Lname','$email','$password')";
+        $sql = "insert into student values('$roll_no','$name','$email','$mobile','$age','$batch','$class10','$class12','$cpi','$specialisation','$aoi','$package','$password')";
     
         if(mysqli_query($con,$sql))
         {
             echo "<script>alert('new record inserted')</script>";
-            echo "<script>window.open('./form1.php','_self')</script>";
+            echo "<script>window.open('./Login_register.php','_self')</script>";
         }
         else
         {
