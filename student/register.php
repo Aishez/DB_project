@@ -19,6 +19,7 @@ if (isset($_POST['submit']))
     $package = $_POST['package'];
     $password = $_POST['password'];
 
+    
 
     if( $cpassword == $password && strlen($password) >= 8)
     {
