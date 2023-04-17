@@ -36,7 +36,7 @@ $s = mysqli_query($con, "select * from company");
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Company : </label>
                         <select class="form-select" name="company" aria-label="Default select example">
-                            <option selected>--none--</option>
+                            <option selected value="default">--none--</option>
                             <?php
                             while ($r = mysqli_fetch_array($s)) {
                                 $company_name = $r['Name'];
@@ -55,7 +55,7 @@ $s = mysqli_query($con, "select * from company");
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Year : </label>
                         <select class="form-select" name="year" aria-label="Default select example">
-                            <option selected>--Year--</option>
+                            <option selected value="default">--Year--</option>
                             <option value="2021">2021</option>
                             <option value="2022">2022</option>
                             <option value="2023">2023</option>
@@ -68,35 +68,59 @@ $s = mysqli_query($con, "select * from company");
 
                     <?php
 
-                        if ($_SERVER["REQUEST_METHOD"] == "POST")
-                        {
-                            $company = $_POST['company'];
-                            $year = $_POST['year'];
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $company = $_POST['company'];
+                        $year = $_POST['year'];
 
-                            $que = null;
-                            $sql = "select * from student where Placed_in ='$company' and Batch = '$year' ";
-                            $que = mysqli_query($con, $sql);
-                            // echo mysqli_num_rows($que);
-                        }
+                        $s = null;
+                        $sql = "select * from student where Placed_in ='$company' and Batch = '$year' ";
+                        $s = mysqli_query($con, $sql);
+                        // echo mysqli_num_rows($que);
+                    }
                     ?>
 
                     <div class="badge bg-light text-wrap" style="height:70%;  width: 100%; margin-left: 25%; padding-top :6%; margin-top: 5%;">
                         <div class="ans" style="color: black; font-size:15px">
-                            Number of Students = <?php echo mysqli_num_rows($que);  ?>
+                            Number of Students = <?php echo mysqli_num_rows($s);  ?>
                         </div>
 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Show lists
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <?php
+                                while ($r = mysqli_fetch_array($s)) {
+                                    $Roll_no = $r['Roll_no'];
+                                ?>
+                                    <li><a class="dropdown-item" href="#"> <?php echo $r['Roll_no'];  ?> </a></li>
+
+                                <?php
+                                }
+                                ?>  
+                            </ul>
+                        </li>
 
                     </div>
+
+
+
+
                 </div>
+
+
 
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
 
+
+
     </div>
 
 
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 

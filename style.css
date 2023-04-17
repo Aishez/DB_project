@@ -33,9 +33,7 @@ header {
     text-align: center;
 }
 
-.btn-primary,
-.btn-secondary {
-    /* margin-top: ; */
+.btn-primary, .btn-secondary {
     padding: 15px 100px;
 }
 
@@ -47,12 +45,12 @@ header {
     transform: scale(1.2);
 }
 
-
+/* 
 .feedback_img {
     justify-content: center;
     align-items: center;
     text-align: center;
-}
+} */
 
 
 

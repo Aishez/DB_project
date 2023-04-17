@@ -97,14 +97,13 @@ $s = mysqli_query($con, "select * from company");
                         <select class="form-select" name="placed" aria-label="Default select example">
                             <option selected>--none--</option>
                             <?php
-                                while($r = mysqli_fetch_array($s) )
-                                {
-                                    $company_name = $r['Name'];
+                            while ($r = mysqli_fetch_array($s)) {
+                                $company_name = $r['Name'];
                             ?>
-                                    <option value=" <?php echo $company_name ?> "> <?php echo $r['Name'];  ?>  </option>
+                                <option value=" <?php echo $company_name ?> "> <?php echo $r['Name'];  ?> </option>
 
                             <?php
-                                }
+                            }
                             ?>
                         </select>
                     </div>
