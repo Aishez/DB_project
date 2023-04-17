@@ -1,3 +1,10 @@
+<?php
+include './Database.php';
+
+$s = mysqli_query($con, "select * from company");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,60 +22,30 @@
 </head>
 
 <body style="background-image: linear-gradient(90deg ,white,skyblue);">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
+
 
 
 
     <div class="container mt-5 pt-5">
-        <h3>1. Number of students placed : </h3>
+        <h3> Number of students placed : </h3>
 
-        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
             <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Company : </label>
                         <select class="form-select" name="company" aria-label="Default select example">
-                            <option selected>--Company--</option>
-                            <option value="Google">Google</option>
-                            <option value="Microsoft">Microsoft</option>
-                            <option value="Amazon">Amazon</option>
+                            <option selected>--none--</option>
+                            <?php
+                            while ($r = mysqli_fetch_array($s)) {
+                                $company_name = $r['Name'];
+                            ?>
+                                <option value=" <?php echo $company_name ?> "> <?php echo $r['Name'];  ?> </option>
+
+                            <?php
+                            }
+                            ?>
                         </select>
                     </div>
 
@@ -76,6 +53,7 @@
 
                 <div class="col-md-4">
                     <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Year : </label>
                         <select class="form-select" name="year" aria-label="Default select example">
                             <option selected>--Year--</option>
                             <option value="2021">2021</option>
@@ -87,15 +65,28 @@
                 </div>
 
                 <div class="col-md-4">
-                    <!-- <div class="mb-3">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>ct menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div> -->
 
+                    <?php
+
+                        if ($_SERVER["REQUEST_METHOD"] == "POST")
+                        {
+                            $company = $_POST['company'];
+                            $year = $_POST['year'];
+
+                            $que = null;
+                            $sql = "select * from student where Placed_in ='$company' and Batch = '$year' ";
+                            $que = mysqli_query($con, $sql);
+                            // echo mysqli_num_rows($que);
+                        }
+                    ?>
+
+                    <div class="badge bg-light text-wrap" style="height:70%;  width: 100%; margin-left: 25%; padding-top :6%; margin-top: 5%;">
+                        <div class="ans" style="color: black; font-size:15px">
+                            Number of Students = <?php echo mysqli_num_rows($que);  ?>
+                        </div>
+
+
+                    </div>
                 </div>
 
             </div>
@@ -110,20 +101,3 @@
 </body>
 
 </html>
-
-<?php
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {    
-        $company = $_POST['company'];
-        $year = $_POST['year'];
-
-        $sql = "SELECT COUNT(*) AS num_students_placed from allums WHERE allums.Name = $company AND allums.Batch = $year";
-
-        $que=mysqli_query($con,$sql);
-
-        echo mysqli_num_rows($que);
-    }
-
-
-?>

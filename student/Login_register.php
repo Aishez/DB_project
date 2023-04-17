@@ -1,3 +1,9 @@
+<?php
+include '../Database.php';
+
+$s = mysqli_query($con, "select * from company");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,8 +93,20 @@
                         <input type="text" name="aoi" class="form-control" id="InputX1">
                     </div>
                     <div class="mb-3 col-md-4">
-                        <label for="exampleInputPassword1" class="form-label">Package(LPA) : </label>
-                        <input type="number" name="package" class="form-control" id="InputX1">
+                        <label for="exampleInputPassword1" class="form-label">Placed Company : </label>
+                        <select class="form-select" name="placed" aria-label="Default select example">
+                            <option selected>--none--</option>
+                            <?php
+                                while($r = mysqli_fetch_array($s) )
+                                {
+                                    $company_name = $r['Name'];
+                            ?>
+                                    <option value=" <?php echo $company_name ?> "> <?php echo $r['Name'];  ?>  </option>
+
+                            <?php
+                                }
+                            ?>
+                        </select>
                     </div>
                 </div>
 
@@ -106,7 +124,7 @@
 
 
                 <button type="reset" class="btn btn-primary mt-5">Clear</button>
-                <button type="submit" name="submit" value="submit"  class="btn btn-primary mt-5 ms-5">Submit</button>
+                <button type="submit" name="submit" value="submit" class="btn btn-primary mt-5 ms-5">Submit</button>
                 <!--  Error will come when we submit the form  -->
             </form>
         </div>

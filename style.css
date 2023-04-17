@@ -5,7 +5,7 @@
     background-position: 50% 10%;
 } */
 
-header{
+header {
     background-color: #444;
     color: #fff;
     padding: 20px;
@@ -48,18 +48,11 @@ header{
 }
 
 
-.feedback_img
-{
+.feedback_img {
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-
-.navbar
-{
-    flex-grow: 0;
-}
-
 
 
 

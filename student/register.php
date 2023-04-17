@@ -16,7 +16,7 @@ if (isset($_POST['submit']))
     $cpi = $_POST['cpi'];
     $specialisation = $_POST['specialisation'];
     $aoi = $_POST['aoi'];
-    $package = $_POST['package'];
+    $placed = $_POST['placed'];
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
 
@@ -28,7 +28,7 @@ if (isset($_POST['submit']))
         {
             $chk.=$chk1.",";
         }
-        $sql = "insert into student values('$roll_no','$name','$email','$mobile','$age','$batch','$class10','$class12','$cpi','$specialisation','$aoi','$package','$password')";
+        $sql = "insert into student values('$roll_no','$name','$email','$mobile','$age','$batch','$class10','$class12','$cpi','$specialisation','$aoi','$placed','$password')";
     
         if(mysqli_query($con,$sql))
         {

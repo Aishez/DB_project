@@ -48,7 +48,11 @@
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="exampleInputPassword1" class="form-label">Mode of interveiw : </label>
-                        <input type="text" name="mode" class="form-control" id="Input1">
+                        <select class="form-select" name="mode" aria-label="Default select example">
+                            <option selected>--none--</option>
+                            <option value="Online">Online</option>
+                            <option value="Offline">Offline</option>
+                        </select>
                     </div>
                 </div>
 
@@ -56,7 +60,7 @@
 
                 <div class="row">
                     <div class="mb-3 col-md-4">
-                        <label for="exampleInputPassword1" class="form-label">CPT : </label>
+                        <label for="exampleInputPassword1" class="form-label">CPI : </label>
                         <input type="number" name="cpi" class="form-control" id="Input1">
                     </div>
                 </div>
