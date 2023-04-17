@@ -55,6 +55,10 @@ header{
     text-align: center;
 }
 
+.navbar
+{
+    flex-grow: 0;
+}
 
 
 

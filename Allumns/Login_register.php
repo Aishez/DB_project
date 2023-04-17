@@ -111,7 +111,7 @@
 
             <div class="col-md-6">
                 <div class="feedback_img">
-                    <img class="login-img" src="./images/logo.svg" width="50%" alt="Error" style="margin-left: 25%;">
+                    <img class="login-img" src="../images/logo.svg" width="50%" alt="Error" style="margin-left: 25%;">
                 </div>
             </div>
 

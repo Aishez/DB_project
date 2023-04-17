@@ -12,7 +12,7 @@ $row = mysqli_fetch_assoc($que);
 $name = $row['Name'];
 $roll = $row['Roll_no'];
 $email = $row['Email'];
-$mobile = $row['Moblie'];
+$mobile = $row['Mobile'];
 $age = $row['Age'];
 $batch = $row['Batch'];
 $class10 = $row['class10'];
@@ -48,7 +48,7 @@ $class10 = $row['Package'];
 
 
     
-
+    <?php   echo "Name : $name"  ?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

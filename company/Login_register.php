@@ -26,101 +26,55 @@
     <div class="container mt-4 pt-5" id="register" style="display: none;">
         <h2 style="text-align:center;">Registration</h2>
         <div class="row">
-            <form>
+            <form method="post" action="./register.php">
 
                 <h3>Personal Information</h3>
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="exampleInputPassword1" class="form-label">Name : </label>
-                        <input type="text" name="FName" class="form-control" id="Input1">
-                        <span id="error-Fname" style="color: red; font-size: 12px;">
+                        <input type="text" name="name" class="form-control" id="Input1">
                     </div>
                     <div class="mb-3 col-md-4">
-                        <label for="exampleInputPassword1" class="form-label">Roll No : </label>
-                        <input type="text" name="LName" class="form-control" id="InputX1">
-                        <span id="error-Lname" style="color: red; font-size: 12px;">
+                        <label for="exampleInputPassword1" class="form-label">Package : </label>
+                        <input type="number" name="package" class="form-control" id="InputX1">
                     </div>
                     <div class="mb-3 col-md-4">
-                        <label for="exampleInputPassword1" class="form-label">Email : </label>
-                        <input type="email" name="LName" class="form-control" id="InputX1">
+                        <label for="exampleInputPassword1" class="form-label">Since : </label>
+                        <input type="number" name="since" class="form-control" id="InputX1">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        <span id="error-Lname" style="color: red; font-size: 12px;">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="mb-3 col-md-4">
-                        <label for="exampleInputPassword1" class="form-label">Mobile No : </label>
-                        <input type="number" name="FName" class="form-control" id="Input1">
-                        <span id="error-Fname" style="color: red; font-size: 12px;">
-                    </div>
-                    <div class="mb-3 col-md-4">
-                        <label for="exampleInputPassword1" class="form-label">Age : </label>
-                        <input type="number" name="LName" class="form-control" id="InputX1">
-                        <span id="error-Lname" style="color: red; font-size: 12px;">
-                    </div>
-                    <div class="mb-3 col-md-4">
-                        <label for="exampleInputPassword1" class="form-label">Batch of : </label>
-                        <input type="month" name="LName" class="form-control" id="InputX1">
-                        <span id="error-Lname" style="color: red; font-size: 12px;">
+                        <label for="exampleInputPassword1" class="form-label">Mode of interveiw : </label>
+                        <input type="text" name="mode" class="form-control" id="Input1">
                     </div>
                 </div>
 
-                <h3> Academic Details</h3>
+                <h3> Candidate details required</h3>
 
                 <div class="row">
                     <div class="mb-3 col-md-4">
-                        <label for="exampleInputPassword1" class="form-label">Class 10th : </label>
-                        <input type="number" name="FName" class="form-control" id="Input1">
-                        <span id="error-Fname" style="color: red; font-size: 12px;">
-                    </div>
-                    <div class="mb-3 col-md-4">
-                        <label for="exampleInputPassword1" class="form-label">Class 12th : </label>
-                        <input type="number" name="LName" class="form-control" id="InputX1">
-                        <span id="error-Lname" style="color: red; font-size: 12px;">
-                    </div>
-                    <div class="mb-3 col-md-4">
-                        <label for="exampleInputPassword1" class="form-label">CPI : </label>
-                        <input type="number" name="LName" class="form-control" id="InputX1">
-                        <span id="error-Lname" style="color: red; font-size: 12px;">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="mb-3 col-md-4">
-                        <label for="exampleInputPassword1" class="form-label">Specialisation : </label>
-                        <input type="text" name="FName" class="form-control" id="Input1">
-                        <span id="error-Fname" style="color: red; font-size: 12px;">
-                    </div>
-                    <div class="mb-3 col-md-4">
-                        <label for="exampleInputPassword1" class="form-label">Area of Interest : </label>
-                        <input type="text" name="LName" class="form-control" id="InputX1">
-                        <span id="error-Lname" style="color: red; font-size: 12px;">
-                    </div>
-                    <div class="mb-3 col-md-4">
-                        <label for="exampleInputPassword1" class="form-label">Package(LPA) : </label>
-                        <input type="number" name="LName" class="form-control" id="InputX1">
-                        <span id="error-Lname" style="color: red; font-size: 12px;">
+                        <label for="exampleInputPassword1" class="form-label">CPT : </label>
+                        <input type="number" name="cpi" class="form-control" id="Input1">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="mb-3 col-md-6">
                         <label for="exampleInputPassword1" class="form-label">Password : </label>
-                        <input type="password" name="FName" class="form-control" id="Input1">
-                        <span id="error-Fname" style="color: red; font-size: 12px;">
+                        <input type="password" name="password" class="form-control" id="Input1">
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="exampleInputPassword1" class="form-label">Confirm Password : </label>
-                        <input type="password" name="LName" class="form-control" id="InputX1">
-                        <span id="error-Lname" style="color: red; font-size: 12px;">
+                        <input type="password" name="cpassword" class="form-control" id="InputX1">
                     </div>
                 </div>
 
 
-
                 <button type="reset" class="btn btn-primary mt-5">Clear</button>
-                <button type="submit" class="btn btn-primary mt-5 ms-5">Submit</button>
+                <button type="submit" name="submit_cmp" class="btn btn-primary mt-5 ms-5">Submit</button>
                 <!--  Error will come when we submit the form  -->
             </form>
         </div>

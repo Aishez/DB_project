@@ -15,9 +15,6 @@
 </head>
 
 <body style="background-image: linear-gradient(90deg ,white,skyblue);">
-
-    <!-- Navigation bar -->
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
@@ -59,42 +56,74 @@
 
 
 
-    <header>
-        <h1>Welcome to Our Database</h1>
-    </header>
+    <div class="container mt-5 pt-5">
+        <h3>1. Number of students placed : </h3>
 
-    <div class="container home1">
-        <div class="row">
-            <div class="col-md-6" style="text-align: center;">
-                <div style="width: 100%;">
-                    <img src="./images/logo.svg" alt="error" class="img1">
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <select class="form-select" name="company" aria-label="Default select example">
+                            <option selected>--Company--</option>
+                            <option value="Google">Google</option>
+                            <option value="Microsoft">Microsoft</option>
+                            <option value="Amazon">Amazon</option>
+                        </select>
+                    </div>
+
                 </div>
+
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <select class="form-select" name="year" aria-label="Default select example">
+                            <option selected>--Year--</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <!-- <div class="mb-3">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>ct menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div> -->
+
+                </div>
+
             </div>
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        </form>
 
-            <div class="col-md-6 button pt-5" id="show-button">
-                <a href="./student/Login_register.php">
-                    <button type="button" class="btn btn-primary glow-on-hover" style="padding: 15px 105px;">Student</button>
-                </a>
-                <br>
-                <a href="./company/Login_register.php">
-                    <button type="button" class="btn btn-secondary mt-4 glow-on-hover">Company</button>
-                </a>
-                <br>
-                <a href="./Allumns/Login_register.php">
-                    <button type="button" class="btn btn-success mt-4 glow-on-hover" style="padding: 15px 110px;">Allums</button>
-                </a>
-
-            </div>
-
-            <div class="col-md-6" style="display: none;" id="show-form">
-
-            </div>
-        </div>
     </div>
 
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>
+
+<?php
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST")
+    {    
+        $company = $_POST['company'];
+        $year = $_POST['year'];
+
+        $sql = "SELECT COUNT(*) AS num_students_placed from allums WHERE allums.Name = $company AND allums.Batch = $year";
+
+        $que=mysqli_query($con,$sql);
+
+        echo mysqli_num_rows($que);
+    }
+
+
+?>
