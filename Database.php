@@ -12,7 +12,7 @@
     }
     else
     {
-        echo "connection ok";
+        // echo "connection ok";
     }
 
 ?>

@@ -2,21 +2,19 @@
 
 include '../Database.php';
 
-if (isset($_POST['submit'])) 
+if (isset($_POST['submit_alu'])) 
 {
     
     $name = $_POST['name'];
     $roll_no = $_POST['roll'];
     $email = $_POST['email'];
-    $mobile = $_POST['mobile'];
-    $age = $_POST['age'];
     $batch = $_POST['batch'];
-    $class10 = $_POST['class10'];
-    $class12 = $_POST['class12'];
-    $cpi = $_POST['cpi'];
-    $specialisation = $_POST['specialisation'];
-    $aoi = $_POST['aoi'];
-    $package = $_POST['package'];
+    $company_name = $_POST['company_name'];
+    $ctc = $_POST['ctc'];
+    $working_tenure = $_POST['working_tenure'];
+    $area = $_POST['area'];
+    $position = $_POST['position'];
+    $location = $_POST['location'];
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
 
@@ -28,7 +26,7 @@ if (isset($_POST['submit']))
         {
             $chk.=$chk1.",";
         }
-        $sql = "insert into student values('$roll_no','$name','$email','$mobile','$age','$batch','$class10','$class12','$cpi','$specialisation','$aoi','$package','$password')";
+        $sql = "insert into allums values('$roll_no','$name','$email','$working_tenure','$area','$location','$position','$ctc','$company_name','$batch','$password')";
     
         if(mysqli_query($con,$sql))
         {
@@ -54,3 +52,4 @@ if (isset($_POST['submit']))
         echo "<script>window.open('./form1.php','_self')</script>";
     }
 }
+?>
