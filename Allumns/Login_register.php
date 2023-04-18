@@ -126,10 +126,10 @@
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Password </label>
-                        <input type="password" name="password2" class="form-control" id="password1">
+                        <input type="password"  name="password2" class="form-control" id="password1">
                     </div>
 
-                    <button type="button" class="btn btn-primary me-5">Register</button>
+                    <button type="button" onclick="register()" class="btn btn-primary me-5">Register</button>
                     <button type="submit" name="submit2" class="btn btn-primary ms-5 mt-1">Submit</button>
                     <!--  Error will come when we submit the form  -->
                 </form>

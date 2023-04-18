@@ -19,12 +19,10 @@ $row = mysqli_fetch_assoc($que);
 
 
 $name = $row['Name'];
-$roll = $row['Roll_no'];
-$email = $row['Email'];
-$mobile = $row['Mobile'];
-$batch = $row['Batch'];
-$company = $row['Company_name'];
-$position = $row['Position'];
+$CTC = $row['Package'];
+$since = $row['Since'];
+$mode = $row['Mode'];
+$cpi = $row['CPI'];
 $password = $row['password'];
 
 
@@ -57,7 +55,7 @@ $password = $row['password'];
 
             <div class="col-md-4">
                 <div class="feedback_img" style="justify-content: center;">
-                    <img class="login-img" src="../images/profile.png" width="50%" alt="Error" style="margin-left: 25%;">
+                    <img class="login-img" src="../images/company.png" width="50%" alt="Error" style="margin-left: 25%;">
                 </div>
             </div>
 
@@ -65,28 +63,24 @@ $password = $row['password'];
 
                 <div class="row">
                     <div class="col-md-4">
-                        <h5>Roll No. </h5>
-                        <h5>Email </h5>
-                        <h5>Batch </h5>
-                        <h5>Company Name </h5>
-                        <h5>Position </h5>
-
-
+                        <h5>Package </h5>
+                        <h5>Since </h5>
+                        <h5>Mode of Interview </h5>
+                        <h5>CPI criteria (>=) </h5>
                     </div>
                     <div class="col-md-4">
                         <h5> : </h5>    
                         <h5> : </h5>
                         <h5> : </h5>
                         <h5> : </h5>
-                        <h5> : </h5>
                     </div>
 
                     <div class="col-md-4">
-                        <h5> <?php echo $roll ?> </h5>
-                        <h5> <?php echo $email ?> </h5>
-                        <h5> <?php echo $batch ?> </h5>
-                        <h5> <?php echo $company ?> </h5>
-                        <h5> <?php echo $position ?> </h5>
+                        <h5> <?php echo $CTC ?> </h5>
+                        <h5> <?php echo $since ?> </h5>
+                        <h5> <?php echo $mode ?> </h5>
+                        <h5> <?php echo $cpi ?> </h5>
+                        
 
 
                     </div>
@@ -95,7 +89,7 @@ $password = $row['password'];
                 <?php
                 session_start();
 
-                $_SESSION['roll'] = $roll;
+                $_SESSION['name'] = $name;
                 $_SESSION['password'] = $password;
                 ?>
 

@@ -49,7 +49,7 @@ if (isset($_POST['submit_alu']))
     else
     {
         echo "<script>alert('PASSWORD NOT MATCHED')</script>";
-        echo "<script>window.open('./form1.php','_self')</script>";
+        echo "<script>window.open('./Login_register.php','_self')</script>";
     }
 }
 ?>

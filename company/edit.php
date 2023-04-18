@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+    <title>Edit page</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -23,16 +23,16 @@
 
     <!-- Registration form -->
 
-    <div class="container mt-4 pt-5" id="register" style="display: none;">
-        <h2 style="text-align:center;">Registration</h2>
+    <div class="container mt-4 pt-5" id="register">
+        <h2 style="text-align:center;">Enter New Details </h2>
         <div class="row">
-            <form method="post" action="./register.php">
+            <form method="post" action="./editprocess.php">
 
                 <h3>Personal Information</h3>
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="exampleInputPassword1" class="form-label">Name : </label>
-                        <input type="text" name="name" class="form-control" id="Input1">
+                        <input type="text" name="name" class="form-control" id="Input1" placeholder="cannot be updated">
                     </div>
                     <div class="mb-3 col-md-4">
                         <label for="exampleInputPassword1" class="form-label">Package : </label>
@@ -78,49 +78,11 @@
 
 
                 <button type="reset" class="btn btn-primary mt-5">Clear</button>
-                <button type="submit" name="submit_cmp" class="btn btn-primary mt-5 ms-5">Submit</button>
+                <button type="submit" name="submit2" class="btn btn-primary mt-5 ms-5">Submit</button>
                 <!--  Error will come when we submit the form  -->
             </form>
         </div>
     </div>
-
-
-    <!-- Login Form -->
-
-    <div class="container mt-5 pb-5" id="login" style="display: block;">
-        <h2 style="margin-left: 51%;">Login Form</h2><br>
-        <div class="row">
-
-            <div class="col-md-6">
-                <div class="feedback_img">
-                    <img class="login-img" src="../images/logo.svg" width="50%" alt="Error" style="margin-left: 25%;">
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <form method="post" action="./login.php">
-
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Company</label>
-                        <input type="text" name="company2" class="form-control" id="email1">
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Password </label>
-                        <input type="password" name="password2" class="form-control" id="password1">
-                    </div>
-
-                    <button type="button" onclick="register()" class="btn btn-primary me-5">Register</button>
-                    <button type="submit" name="submit2" class="btn btn-primary ms-5 mt-1">Submit</button>
-                    <!--  Error will come when we submit the form  -->
-                </form>
-
-            </div>
-
-        </div>
-    </div>
-
 
 
     <!-- Bootstrap JS -->
