@@ -74,7 +74,7 @@ $s = mysqli_query($con, "select * from company");
                         $company = $_POST['company'];
                         $year = $_POST['year'];
 
-                        $s = null;
+                        // $s = null;
                         $sql = "select * from student where Placed_in ='$company' and Batch = '$year' ";
                         $s = mysqli_query($con, $sql);
                         // echo mysqli_num_rows($que);
@@ -116,8 +116,6 @@ $s = mysqli_query($con, "select * from company");
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
 
-
-
     </div>
 
 
@@ -152,7 +150,7 @@ $s = mysqli_query($con, "select * from company");
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $year = $_POST['year'];
 
-                        $s = null;
+                        // $s = null;
                         $sql = "select * from company where Since > '$year'";
                         $s = mysqli_query($con, $sql);
                         // echo mysqli_num_rows($que);
@@ -220,6 +218,7 @@ $s = mysqli_query($con, "select * from company");
 
                             <?php
                             }
+                            $s=null;
                             ?>
                         </select>
                     </div>
@@ -235,22 +234,22 @@ $s = mysqli_query($con, "select * from company");
                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $company = $_POST['company3'];
 
-                                $s1 = null;
+                                
                                 $sql = "select * from student where Placed_in ='$company'";
-                                $s1 = mysqli_query($con, $sql); 
-                                $r1 = mysqli_fetch_array($s);
+                                $s1 = mysqli_query($con, $sql);
+                                // $r1 = mysqli_fetch_array($s);
 
-                                $t = null;
+                                
                                 $sql = "select * from allums where Company_name ='$company'";
                                 $t = mysqli_query($con, $sql);
-                                $r2 = mysqli_fetch_array($t);
+                                // $r2 = mysqli_fetch_array($t);
                                 // echo mysqli_num_rows($que);
                             }
                             ?>
 
                             <div class="badge bg-light text-wrap" style="height:70%;  width: 100%; margin-left: 25%; padding-top :6%; margin-top: 5%;">
                                 <div class="ans" style="color: black; font-size:15px">
-                                    Number of Student placed = <?php echo (mysqli_num_rows($s1)) ;  ?>
+                                    Number of Student placed = <?php echo (mysqli_num_rows($s1));  ?>
                                 </div>
                             </div>
 
@@ -268,7 +267,7 @@ $s = mysqli_query($con, "select * from company");
                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $company = $_POST['company'];
 
-                                $s = null;
+                                // $s = null;
                                 $sql = "select * from company where Name ='$company' ";
                                 $s = mysqli_query($con, $sql);
                                 $r = mysqli_fetch_array($s);
@@ -291,7 +290,7 @@ $s = mysqli_query($con, "select * from company");
                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $company = $_POST['company'];
 
-                                $s = null;
+                                // $s = null;
                                 $sql = "select * from company where Name ='$company' ";
                                 $s = mysqli_query($con, $sql);
                                 $r = mysqli_fetch_array($s);
@@ -310,9 +309,10 @@ $s = mysqli_query($con, "select * from company");
                 </div>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
 
-    </form>
+
 
 
 
