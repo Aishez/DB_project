@@ -114,7 +114,7 @@ $s = mysqli_query($con, "select * from company");
                     </div>
                     <div class="mb-3 col-md-4">
                         <label for="exampleInputPassword1" class="form-label">CPI : </label>
-                        <input type="number" name="cpi" class="form-control" id="InputX1">
+                        <input type="number" pattern="^\d*(\.\d{0,2})?$"  name="cpi" class="form-control" id="InputX1">
                     </div>
                 </div>
 
