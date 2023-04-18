@@ -95,7 +95,7 @@ $password = $row['password'];
 
     <div class="container mt-5 pb-5" id="login" style="display: block; border: 1px solid black; border-radius: 20px;">
         <h1 style="margin-left: 51%;"> <?php echo $name ?> </h1><br>
-        <div class="row">
+        <div class="row">   
 
             <div class="col-md-4">
                 <div class="feedback_img" style="justify-content: center;">
