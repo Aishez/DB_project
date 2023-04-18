@@ -25,6 +25,39 @@ $s = mysqli_query($con, "select * from company");
 
 <body style="background-image: linear-gradient(90deg ,white,skyblue);">
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-image: linear-gradient(90deg , white ,white  ); font-size:larger;">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="#">
+                <header>
+                    Welcome to Our Database
+                </header>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./Homepage.php">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Login
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="./student/Login_register.php">Student Login </a></li>
+                            <li><a class="dropdown-item" href="./company/Login_register.php">Company Login</a></li>
+                            <li><a class="dropdown-item" href="./Allumns/Login_register.php">Allumns Login</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./query.php">Queries</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
 
@@ -119,8 +152,6 @@ $s = mysqli_query($con, "select * from company");
     </div>
 
 
-
-
     <div class="container mt-2 pt-5">
         <h3> Number of Companied appeared in year : </h3>
 
@@ -197,7 +228,12 @@ $s = mysqli_query($con, "select * from company");
     </div>
 
 
-    <!-- <div class="container mt-2 pt-5 " style="margin-bottom: 20%;">
+
+
+
+
+
+    <div class="container mt-2 pt-5 " style="margin-bottom: 20%;">
         <h3> Company details : </h3>
 
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -207,7 +243,7 @@ $s = mysqli_query($con, "select * from company");
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Company : </label>
-                        <select class="form-select" name="company3" aria-label="Default select example">
+                        <!-- <select class="form-select" name="company3" aria-label="Default select example">
                             <option selected value="default">--none--</option>
                             <?php
                             $s = mysqli_query($con, "select * from company");
@@ -220,48 +256,21 @@ $s = mysqli_query($con, "select * from company");
                             }
                             $s = null;
                             ?>
-                        </select>
+                        </select> -->
+                        <input type="text" name="company" class="form-control" id="email1">
                     </div>
 
                 </div>
 
+
+
+
+
+
                 <div class="col-md-8">
 
                     <div class="row">
-                        <div class="col-md-4">
-                            <?php
-
-                            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                $company = $_POST['company3'];
-
-
-                                $sql = "select * from student where Placed_in ='$company'";
-                                $s1 = mysqli_query($con, $sql);
-                                // $r1 = mysqli_fetch_array($s);
-
-
-                                $sql = "select * from allums where Company_name ='$company'";
-                                $t = mysqli_query($con, $sql);
-                                // $r2 = mysqli_fetch_array($t);
-                                // echo mysqli_num_rows($que);
-                            }
-                            ?>
-
-                            <div class="badge bg-light text-wrap" style="height:70%;  width: 100%; margin-left: 25%; padding-top :6%; margin-top: 5%;">
-                                <div class="ans" style="color: black; font-size:15px">
-                                    Number of Student placed = <?php echo (mysqli_num_rows($s1));  ?>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                            </div>
-
-                            <div class="col-md-4">
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <?php
 
                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -283,7 +292,7 @@ $s = mysqli_query($con, "select * from company");
 
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
 
                             <?php
 
@@ -305,15 +314,15 @@ $s = mysqli_query($con, "select * from company");
                             </div>
 
                         </div>
+
                     </div>
                 </div>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
-    </div> -->
-
-
     </div>
+
+
 
 
 
