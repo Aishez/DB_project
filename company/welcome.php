@@ -101,6 +101,10 @@ $password = $row['password'];
                 <a href="./delete.php">
                     <button type="button" class="btn btn-danger mt-3 ms-5">Delete</button>
                 </a>
+                <a href="../query.php">
+                    <button type="button" class="btn btn-warning mt-3 ms-5">Query</button>
+                </a>
+
 
             </div>
 

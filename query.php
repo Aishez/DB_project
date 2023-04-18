@@ -197,7 +197,7 @@ $s = mysqli_query($con, "select * from company");
     </div>
 
 
-    <div class="container mt-2 pt-5 " style="margin-bottom: 20%;">
+    <!-- <div class="container mt-2 pt-5 " style="margin-bottom: 20%;">
         <h3> Company details : </h3>
 
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -218,7 +218,7 @@ $s = mysqli_query($con, "select * from company");
 
                             <?php
                             }
-                            $s=null;
+                            $s = null;
                             ?>
                         </select>
                     </div>
@@ -234,12 +234,12 @@ $s = mysqli_query($con, "select * from company");
                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $company = $_POST['company3'];
 
-                                
+
                                 $sql = "select * from student where Placed_in ='$company'";
                                 $s1 = mysqli_query($con, $sql);
                                 // $r1 = mysqli_fetch_array($s);
 
-                                
+
                                 $sql = "select * from allums where Company_name ='$company'";
                                 $t = mysqli_query($con, $sql);
                                 // $r2 = mysqli_fetch_array($t);
@@ -310,10 +310,7 @@ $s = mysqli_query($con, "select * from company");
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
-    </div>
-
-
-
+    </div> -->
 
 
     </div>
