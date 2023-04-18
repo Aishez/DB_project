@@ -60,7 +60,7 @@ $class10 = $row['Package'];
 
             <div class="col-md-6">
                 <div class="feedback_img">
-                    <img class="login-img" src="../images/profile.png" width="50%" alt="Error" style="margin-left: 25%;">
+                    <img class="login-img" src="../images/logo.svg" width="50%" alt="Error" style="margin-left: 25%;">
                 </div>
             </div>
 
@@ -98,8 +98,8 @@ $class10 = $row['Package'];
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-info mt-3" style="padding: 6px 25px;">Edit</button>
-                <button type="button" class="btn btn-danger mt-3 ms-5">Delete</button>
+                <button type="button" class="btn btn-info">Edit</button>
+                <button type="button" class="btn btn-danger">Delete</button>
             </div>
 
         </div>

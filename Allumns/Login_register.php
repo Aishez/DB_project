@@ -116,7 +116,7 @@
             </div>
 
             <div class="col-md-6">
-                <form name="Login" onsubmit="" method="post">
+                <form name="Login" method="post" action="./login.php">
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Roll No</label>
