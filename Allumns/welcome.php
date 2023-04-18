@@ -10,6 +10,8 @@ include '../Database.php';
 error_reporting(E_ERROR | E_PARSE);
 
 $sql = $_SESSION['sql'];
+// $_SESSION['sql'] = $sql;
+
 
 
 $que = mysqli_query($con, $sql);
@@ -20,15 +22,9 @@ $name = $row['Name'];
 $roll = $row['Roll_no'];
 $email = $row['Email'];
 $mobile = $row['Mobile'];
-$age = $row['Age'];
 $batch = $row['Batch'];
-$class10 = $row['class10'];
-$class12 = $row['class12'];
-$cpi = $row['cpi'];
-$specialisation = $row['Specialisation'];
-$aoi = $row['AOI'];
-$class10 = $row['Package'];
-
+$company = $row['Company_name'];
+$position = $row['Position'];
 
 
 
@@ -58,28 +54,26 @@ $class10 = $row['Package'];
         <h1 style="margin-left: 51%;"> <?php echo $name ?> </h1><br>
         <div class="row">
 
-            <div class="col-md-6">
-                <div class="feedback_img">
-                    <img class="login-img" src="../images/logo.svg" width="50%" alt="Error" style="margin-left: 25%;">
+            <div class="col-md-4">
+                <div class="feedback_img" style="justify-content: center;">
+                    <img class="login-img" src="../images/profile.png" width="50%" alt="Error" style="margin-left: 25%;">
                 </div>
             </div>
 
-            <div class="col-md-6 mt-5">
+            <div class="col-md-8 mt-5">
 
                 <div class="row">
                     <div class="col-md-4">
                         <h5>Roll No. </h5>
                         <h5>Email </h5>
-                        <h5>Mob no. </h5>
-                        <h5>age </h5>
-                        <h5>batch year </h5>
-                        <h5>CPI </h5>
+                        <h5>Batch </h5>
+                        <h5>Company Name </h5>
+                        <h5>Position </h5>
 
-                        
+
                     </div>
                     <div class="col-md-4">
-                        <h5> : </h5>
-                        <h5> : </h5>
+                        <h5> : </h5>    
                         <h5> : </h5>
                         <h5> : </h5>
                         <h5> : </h5>
@@ -89,17 +83,30 @@ $class10 = $row['Package'];
                     <div class="col-md-4">
                         <h5> <?php echo $roll ?> </h5>
                         <h5> <?php echo $email ?> </h5>
-                        <h5> <?php echo $mobile ?> </h5>
-                        <h5> <?php echo $age ?> </h5>
                         <h5> <?php echo $batch ?> </h5>
-                        <h5> <?php echo $cpi ?> </h5>
+                        <h5> <?php echo $company ?> </h5>
+                        <h5> <?php echo $position ?> </h5>
 
-                        
+
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-info">Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <?php
+                session_start();
+
+                $_SESSION['roll'] = $roll;
+                $_SESSION['password'] = $password;
+                ?>
+
+
+                <a href="./edit.php">
+                    <button type="button" class="btn btn-info mt-3 ms-1 " style="padding: 6px 25px;">Edit</button>
+                </a>
+
+                <a href="./delete.php">
+                    <button type="button" class="btn btn-danger mt-3 ms-5">Delete</button>
+                </a>
+
             </div>
 
         </div>

@@ -10,7 +10,7 @@ if(isset($_POST['submit2']))
     $password2 = $_POST['password2'];
 
     
-    $sql = "select * from student where Roll_no='$roll2' and password='$password2'";
+    $sql = "select * from allums where Roll_no='$roll2' and password='$password2'";
 
     $_SESSION['sql'] = $sql;
 
@@ -28,8 +28,8 @@ if(isset($_POST['submit2']))
         $_SESSION['row']=$row;
         $_SESSION['que']=$que;
 
-        $_SESSION['roll2'] = $roll2;
-        $_SESSION['password2'] = $spassword2;
+        // $_SESSION['roll2'] = $roll2;
+        // $_SESSION['password2'] = $spassword2;
 
         // $fname = $row['Fname'];
         // $lname = $row['Lname'];

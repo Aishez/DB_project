@@ -112,7 +112,7 @@ $password = $row['password'];
 
 
                 <a href="./edit.php">
-                    <button type="button" class="btn btn-info mt-3" style="padding: 6px 25px;">Edit</button>
+                    <button type="button" class="btn btn-info mt-3 ms-1 " style="padding: 6px 25px;">Edit</button>
                 </a>
 
                 <a href="./delete.php">
