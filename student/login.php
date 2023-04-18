@@ -28,8 +28,8 @@ if(isset($_POST['submit2']))
         $_SESSION['row']=$row;
         $_SESSION['que']=$que;
 
-        $_SESSION['roll2'] = $roll2;
-        $_SESSION['password2'] = $spassword2;
+        // $_SESSION['roll2'] = $roll2;
+        // $_SESSION['password2'] = $spassword2;
 
         // $fname = $row['Fname'];
         // $lname = $row['Lname'];

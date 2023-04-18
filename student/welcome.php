@@ -10,6 +10,8 @@ include '../Database.php';
 error_reporting(E_ERROR | E_PARSE);
 
 $sql = $_SESSION['sql'];
+// $_SESSION['sql'] = $sql;
+
 
 
 $que = mysqli_query($con, $sql);
@@ -28,7 +30,7 @@ $cpi = $row['cpi'];
 $specialisation = $row['Specialisation'];
 $aoi = $row['AOI'];
 $class10 = $row['Package'];
-
+$password = $row['password'];
 
 
 
@@ -58,13 +60,13 @@ $class10 = $row['Package'];
         <h1 style="margin-left: 51%;"> <?php echo $name ?> </h1><br>
         <div class="row">
 
-            <div class="col-md-6">
-                <div class="feedback_img">
+            <div class="col-md-4">
+                <div class="feedback_img" style="justify-content: center;">
                     <img class="login-img" src="../images/profile.png" width="50%" alt="Error" style="margin-left: 25%;">
                 </div>
             </div>
 
-            <div class="col-md-6 mt-5">
+            <div class="col-md-8 mt-5">
 
                 <div class="row">
                     <div class="col-md-4">
@@ -74,10 +76,12 @@ $class10 = $row['Package'];
                         <h5>age </h5>
                         <h5>batch year </h5>
                         <h5>CPI </h5>
+                        <h5>Password </h5>
 
-                        
+
                     </div>
                     <div class="col-md-4">
+                        <h5> : </h5>
                         <h5> : </h5>
                         <h5> : </h5>
                         <h5> : </h5>
@@ -93,13 +97,28 @@ $class10 = $row['Package'];
                         <h5> <?php echo $age ?> </h5>
                         <h5> <?php echo $batch ?> </h5>
                         <h5> <?php echo $cpi ?> </h5>
+                        <h5> <?php echo $password ?> </h5>
 
-                        
+
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-info mt-3" style="padding: 6px 25px;">Edit</button>
-                <button type="button" class="btn btn-danger mt-3 ms-5">Delete</button>
+                <?php
+                session_start();
+
+                $_SESSION['roll'] = $roll;
+                $_SESSION['password'] = $password;
+                ?>
+
+
+                <a href="./edit.php">
+                    <button type="button" class="btn btn-info mt-3" style="padding: 6px 25px;">Edit</button>
+                </a>
+
+                <a href="./delete.php">
+                    <button type="button" class="btn btn-danger mt-3 ms-5">Delete</button>
+                </a>
+
             </div>
 
         </div>
