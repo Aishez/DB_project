@@ -25,6 +25,7 @@ $s = mysqli_query($con, "select * from company");
 
 <body style="background-image: linear-gradient(90deg ,white,skyblue);">
 
+    <!-- Nav bar  -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-image: linear-gradient(90deg , white ,white  ); font-size:larger;">
         <div class="container-fluid ">
             <a class="navbar-brand" href="#">
@@ -94,9 +95,10 @@ $s = mysqli_query($con, "select * from company");
                             <option value="2021">2021</option>
                             <option value="2022">2022</option>
                             <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
                         </select>
                     </div>
-
                 </div>
 
                 <div class="col-md-4">
@@ -107,7 +109,7 @@ $s = mysqli_query($con, "select * from company");
                         $company = $_POST['company'];
                         $year = $_POST['year'];
 
-                        // $s = null;
+                        $s = null;
                         $sql = "select * from student where Placed_in ='$company' and Batch = '$year' ";
                         $s = mysqli_query($con, $sql);
                         // echo mysqli_num_rows($que);
